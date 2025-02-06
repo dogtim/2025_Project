@@ -4,14 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.tim.google.photos.databinding.FragmentHomeBinding
@@ -45,15 +37,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.composeView.setContent {
-            //MyScreen()
-            var count by remember { mutableStateOf(0) }
-
-            Column {
-                Text("You have clicked the button $count times")
-                Button(onClick = { count++ }) {
-                    Text("Click me")
-                }
-            }
+            MyScreen()
         }
     }
 
